@@ -13,16 +13,11 @@ import os
 logging.basicConfig(level=logging.INFO)
 API_TOKEN = os.environ.get("API_TOKEN")
 DIR_PATH = os.environ.get("DIR_PATH")
-# Initialize bot and dispatcher.
+
 bot = Bot(token=API_TOKEN)
 dp = Dispatcher(bot)
 
-# # Initialize the net.
-# style_model = Net(ngf=128)
-# style_model.load_state_dict(torch.load('21styles.model'), False)
 
-# Initializing the flag to distinguish between images content and style.
-# Initializing flags to check for images.
 files = os.environ.get("FILES")
 
 class Flag(BaseModel):
@@ -32,29 +27,6 @@ class Flag(BaseModel):
 
 global shakal_dict
 shakal_dict: Dict[int, Flag] = {}
-
-
-
-
-# def transform(content_root, style_root, im_size):
-#     """Function for image transformation."""
-#     content_image = tensor_load_rgbimage(content_root, size=im_size,
-#                                          keep_asp=True).unsqueeze(0)
-#     style = tensor_load_rgbimage(style_root, size=im_size).unsqueeze(0)
-#     style = preprocess_batch(style)
-#     style_v = Variable(style)
-#     content_image = Variable(preprocess_batch(content_image))
-#     style_model.setTarget(style_v)
-#     output = style_model(content_image)
-#     tensor_save_bgrimage(output.data[0], 'result.jpg', False)
-
-    # # Clear the RAM.
-    # del content_image
-    # del style
-    # del style_v
-    # del output
-    # torch.cuda.empty_cache()
-    # gc.collect()
 
 
 @dp.message_handler(commands=['start'])
@@ -126,6 +98,13 @@ async def photo_processing(message: types.Message):
         shakal_dict[user_id].flag = True
     await message.answer(text='Successfully!')
 
+
+@dp.message_handler(commands=['info'])
+async def creator(message: types.Message):
+
+    link = 'https://github.com/Ezjen/telegram-bot'
+    await message.answer(text="I have been created by Ezjen." 
+                              "\nMy code is here: " + link)
 
 
 @dp.message_handler(commands=['continue'])
