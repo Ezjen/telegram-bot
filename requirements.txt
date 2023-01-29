@@ -1,0 +1,7 @@
+tensorflow
+tensorflow_hub
+numpy
+python-dotenv
+matplotlib
+aiogram
+pydantic
