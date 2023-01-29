@@ -33,14 +33,21 @@ I set up the bot via `@BotFather`, and there I got a unique token for my bot.
 Thanks to BotFather's capabilities, I was able to create a more comfortable environment for working with the bot. Here's what it looks like:
 
 /start - get basic information about the work of the bot
+
 /cancel - delete the last loaded image
+
 /continue - start NST model
+
 /info - get information about owner
 
 **.env is git-ignored, create it by yourself in a similar way to .env.example**
+
 API_TOKEN - token from BotFather
+
 DIR_PATH - dir project foulder 
+
 DATA - dir with users data (content.jpg, style.jpg, result.jpg). The telegram User_id is added to the file name so that there are no conflicts with parallel requests from different users.
+
 **Before running my code, make sure that you get your own API_TOKEN from BotFather and specify it in the file .env.**
 
 Deploy
