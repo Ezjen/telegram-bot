@@ -44,7 +44,7 @@ Thanks to BotFather's capabilities, I was able to create a more comfortable envi
 
 API_TOKEN - token from BotFather
 
-DIR_PATH - dir project foulder 
+DIR_PATH - dir project folder 
 
 DATA - dir with users data (content.jpg, style.jpg, result.jpg). The telegram User_id is added to the file name so that there are no conflicts with parallel requests from different users.
 
