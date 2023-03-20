@@ -1,7 +1,6 @@
 from aiogram import Bot, Dispatcher, types, Router
 from aiogram import F
 import logging
-# from dotenv import load_dotenv
 from config_reader import config
 from utils import message_proccesing
 from aiogram.filters import Text
@@ -12,12 +11,8 @@ import os
 import asyncio
 
 
-# load_dotenv()
-
-# Configure logging.
 logging.basicConfig(level=logging.INFO)
-# API_TOKEN = os.environ.get("API_TOKEN")
-# DIR_PATH = os.environ.get("DIR_PATH")
+
 API_TOKEN = config.API_TOKEN.get_secret_value()
 DIR_PATH = config.DIR_PATH.get_secret_value()
 
