@@ -113,7 +113,7 @@ async def photo_processing2(message: Message):
         shakal_dict[user_id].flag = False
     else:
         shakal_dict[user_id].flag = True
-    await message.answer(emojize("Successfully! check_mark_button:"))
+    await message.answer(emojize("Successfully! :check_mark_button:"))
 
 
 @router.message(Command("info"))
