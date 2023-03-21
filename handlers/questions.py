@@ -119,8 +119,10 @@ async def photo_processing2(message: Message):
 @router.message(Command("info"))
 async def creator(message: Message):
     link = "https://github.com/Ezjen/telegram-bot"
+    dlslink = "https://dls.samcs.ru/en/dls"
     await message.answer(emojize("I have been created by Ezjen :nerd_face:\n"
-                                 "My code is here: " + link))
+                                 "My code is here: " + link + "\n"
+                                 "MIPT Deep Learning School is here: " + dlslink))
 
 
 @router.message(Command("continue"))
